@@ -1,0 +1,86 @@
+body{
+    background: url('/Imagenes/Fondo-Bodega.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+}
+.loginHeader{
+    text-align: center;
+}
+
+div.loginHeader{
+    margin-bottom: 70px;
+}
+
+.loginHeader h1{
+    color:rgb(255, 55, 55);
+    font-size: 125px;
+    padding: 0px;
+    margin-top: 3%;
+    margin-bottom: 0.2%;
+}
+
+.loginHeader p{
+    color:white;
+    font-size: 80px;
+    text-transform: uppercase;
+    padding: 0px;
+    margin-top: 0%;
+    margin-bottom: 2% ;
+    display: inline-block;
+}
+
+.loginHeader p:after{
+    content: "";
+    display: block;
+    height: 5px;
+    background: rgb(222, 55, 55);
+    margin:0 auto;
+}
+
+.loginBody form{
+    margin: 0 auto;
+    width:600px;
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid white;
+    border-radius: 10px; 
+}
+
+.loginInputsContainer{
+    margin-bottom: 20px;
+}   
+
+.loginInputsContainer label{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white
+}
+
+.loginInputsContainer input{
+    height: 45px;
+    width: 100%;
+    border: 2px solid rgb(222, 55, 55);
+    font-size: 30px;
+    text-align: center;
+}
+
+.loginInputsContainer :placeholder-shown{
+    font-style: italic;
+}
+
+.loginButtonContainer{
+    margin-top: 65px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.loginButtonContainer button{
+    font-size: 45px;
+    padding: 10px 30px;
+    background: rgb(222, 55, 55);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
