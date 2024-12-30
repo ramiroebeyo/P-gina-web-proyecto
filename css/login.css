@@ -1,7 +1,56 @@
+/***** Css Reset *****/  
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/***** End Css Reset *****/
+
 body{
-    background: url('/Imagenes/Fondo-Bodega.jpg') no-repeat center center fixed;
-    background-size: cover;
     font-family: 'Times New Roman', Times, serif;
+}
+
+body#loginBody{
+    background: url('../Imagenes/Fondo-Bodega.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 .loginHeader{
     text-align: center;
@@ -12,7 +61,7 @@ div.loginHeader{
 }
 
 .loginHeader h1{
-    color:rgb(255, 55, 55);
+    color:rgb(34, 159, 255);
     font-size: 125px;
     padding: 0px;
     margin-top: 3%;
@@ -33,7 +82,7 @@ div.loginHeader{
     content: "";
     display: block;
     height: 5px;
-    background: rgb(222, 55, 55);
+    background: rgb(27, 147, 239);
     margin:0 auto;
 }
 
@@ -61,7 +110,7 @@ div.loginHeader{
 .loginInputsContainer input{
     height: 45px;
     width: 100%;
-    border: 2px solid rgb(222, 55, 55);
+    border: 2px solid rgb(27, 147, 239);
     font-size: 30px;
     text-align: center;
 }
@@ -79,8 +128,124 @@ div.loginHeader{
 .loginButtonContainer button{
     font-size: 45px;
     padding: 10px 30px;
-    background: rgb(222, 55, 55);
+    background: rgb(27, 147, 239);
     color: white;
     border: none;
     border-radius: 10px;
+}
+
+.loginButtonContainer button:hover{
+    background: rgb(66, 173, 255);
+    transition: 0.08s;
+}
+
+.loginButtonContainer button:active{
+    background: rgb(151, 210, 255);
+    transition: 0.08s;
+}
+
+.homepageHeader{
+  width: 100%;
+  height: 10px;
+  background: rgb(27, 147, 239);
+}
+
+.banner{
+    background: url('../Imagenes/Containers.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 190px;
+    padding-bottom: 200px;
+}
+
+.homepageContainer{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 60vh;
+}
+
+.bannerHeader h1{
+    font-size: 100px;
+    text-transform: uppercase;
+    color: rgb(29, 154, 249)
+}
+
+.bannerHeader p{
+    font-size: 43px;
+    color: rgb(13, 126, 213);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+.bannerTagline{
+    margin-top: 20px;
+    font-size: 38px;
+    color: rgb(12, 12, 12);
+}
+
+.bannerIcons{
+    margin-top: 50px;
+}
+
+.bannerIcons a{
+    font-size: 35px;
+    margin-left: 40px;
+    padding: 12px 20px;
+    background: rgba(108, 108, 108, 0.628);
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+.bannerIcons a:hover{
+    background: rgb(27, 147, 239);
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    transition: 0.08s;
+}
+
+.homepageFeatures{
+    display: flex;
+    flex-direction: row;
+}
+
+.homepageFeature{
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.featureIcon{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    font-size: 50px;
+    color: rgb(27, 147, 239);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -35px;
+}
+
+.homepageFeature h3{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'arial';
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: rgb(41, 41, 41);
+    margin-left: -35px;
+}
+
+.homepageFeature p{
+    font-size: 20px;
+    color: rgb(41, 41, 41);
+    margin-left: -35px;
+}
+
+.homepageFeature p.editable{
+    width: 300px;
+}
+.homepageFeature p.diseñoPlano{
+    width: 300px;
+}
+.homepageFeature p.publico{
+    width: 300px;
 }
