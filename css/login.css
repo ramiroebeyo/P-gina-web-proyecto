@@ -5,6 +5,7 @@
     --negroMedio: rgba(0, 0, 0, 0.5);
     --grisOscuro: rgb(41, 41, 41);
     --gris: rgba(108, 108, 108, 0.628);
+    --grisClaro: rgb(223, 223, 223);
 }
 /***** Css Reset *****/  
 html, body, div, span, applet, object, iframe,
@@ -353,8 +354,10 @@ body#loginBody{
     background: var(--grisOscuro);
     height: 100vh;
 }
-.content{
+.contentIcons{
     width: 75%;
+    background: var(--grisClaro);
+
 }
 
 .sidebar h3{
@@ -366,6 +369,9 @@ body#loginBody{
 }
 .sidebarUser{
     text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--celeste);
+
 }
 .sidebarUser img{
     position: relative;
@@ -373,6 +379,8 @@ body#loginBody{
     display: inline-block;
     border-radius: 50%;
     border: 2px solid var(--celeste);
+    vertical-align: middle;
+    margin-left: -140px;
 }
 .sidebarUser span{
     position: absolute;
@@ -380,5 +388,59 @@ body#loginBody{
     font-size: 30px;
     text-transform: uppercase;
     color: white;
+    margin-left: 10px;
     
+}
+.menuLists{
+    margin-top: 20px;
+}
+.menuLists li{
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    padding: 25px 0px;
+    list-style: none;
+}
+.menuLists li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 110px;
+}
+.menuLists li a i{
+    font-size: 40px;
+}
+.menuLists li:hover{
+    background: var(--celeste);
+    color: white;
+    transition: 0.08s;
+}
+
+.contentTopNav{
+    background: white;
+    padding: 25px;
+}
+.contentTopNav a{
+    font-size: 30px;
+    color: var(--gris);
+    text-decoration: none;
+}
+.contentTopNav a.navicon{
+    font-size: 40px;
+    margin-top: 5px;
+}
+.contentTopNav a.power-off{
+    float: right;
+    margin-top: 7px;
+}
+
+.content{
+    padding: 40px 10px 10px 10px;
+    min-height: 900px;
+    height: 100%;
+    width: 100%;
+    margin-left: -10px;
+}
+.contentMain{
+    background: white;
+    height: 500px;
 }
