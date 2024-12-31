@@ -205,7 +205,7 @@ body#loginBody{
 }
 .bannerIcons a:hover{
     background: var(--celeste);
-    color: white;
+    color: black;
     transition: 0.08s;
 }
 
@@ -332,7 +332,6 @@ body#loginBody{
     display: flex;
     flex-direction: row;
     font-size: 50px;
-    color: var(--celeste);
 }
 .socials a:hover{
     background: var(--celesteHover);
@@ -392,14 +391,15 @@ body#loginBody{
     
 }
 .menuLists{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .menuLists li{
     font-size: 35px;
     text-transform: uppercase;
     color: white;
-    padding: 25px 0px;
+    padding: 20px 0px;
     list-style: none;
+    margin-bottom: 35px; 
 }
 .menuLists li a{
     text-decoration: none;

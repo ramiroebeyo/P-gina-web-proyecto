@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="homepageHeader">
-        <a href="login.html">Login</a>
+        <a href="login.php">Login</a>
     </div>
     <div class="banner">
         <div class="homepageContainer">
@@ -62,7 +62,7 @@
     <div class="footer">
         <div class="homepageContainer3">
             <div class="facebook">    
-                <a href=""><i class="fa fa-facebook"></i></a>
+                <a class href=""><i class="fa fa-facebook"></i></a>
             </div>  
             <div class="twitter">
                 <a href=""><i class="fa fa-twitter"></i></a>
