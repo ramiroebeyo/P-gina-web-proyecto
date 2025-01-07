@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])) header('location: index.php');
+
+$user = $_SESSION['user']; 
+if(strlen($user['first_name']) > 12){
+    $user['first_name'] = substr($user['first_name'], 0, 10);
+    $user['first_name'] .= "...";
+} 
+?>
+
 <!DOCTYPE html>
 <html lang='en'>    
 <head>
@@ -13,7 +24,7 @@
             <h3 id="logo">IMS</h3>
             <div class="sidebarUser">
                 <img src="Imagenes/user/perfil.png" alt="User image" id="userImage"/>
-                <span id="userName">Gomez</span>
+                <span id="userName"><?= $user['first_name'] ?></span>
             </div>
             <div class="sidebarMenu">
                 <ul class="menuLists">
@@ -41,7 +52,7 @@
         <div class="contentIcons" id="contentIcons">
             <div class="contentTopNav">
                 <a class="navicon" href="" id="Navicon"><i class="fa fa-navicon"></i></a>
-                <a class="power-off" href=""><i class="fa fa-power-off"></i> Log-out</a>
+                <a class="power-off" href="database/logout.php"><i class="fa fa-power-off"></i> Log-out</a>
             </div>
             <div class="content">
                 <div class="contentMain">

@@ -1,3 +1,33 @@
+<?php
+    session_start();
+    if(isset($_SESSION['user'])) header('location: dashboard.php');
+
+    $error_message = '';
+
+    if($_POST){
+        include('database/connection.php'); 
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $query = 'SELECT * FROM users WHERE users.email="'. $username .'" AND users.password= "'. $password .'"';
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        
+        
+
+        if($stmt->rowCount() > 0){
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $user = $stmt->fetchAll()[0];
+            $_SESSION['user'] = $user;
+
+            header('Location: dashboard.php');
+        } else $error_message = 'El nombre de usuario o la contraseña no son correctos';
+
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -7,20 +37,28 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body id="loginBody">
-    <div class="container">
+    <?php
+        if(!empty($error_message)) { ?>
+    <div id="errorMessage">
+        <p>
+            Error: <?= $error_message ?> 
+        </p>
+    <?php } ?>
+    </div>
+    <div class="container"> 
         <div class='loginHeader'>
                 <h1>IMS</h1>
                 <p>Inventory Management System</p>
         </div>
         <div class='loginBody'>
-            <form action=''>
+            <form action='login.php' method='POST'>
                 <div class='loginInputsContainer'>
                     <label for="">Username</label>
-                    <input placeholder="username" type="text" />
+                    <input placeholder="username" name="username" type="text" />
                 </div>
                 <div class='loginInputsContainer'>
                     <label for="">Password</label>
-                    <input placeholder="password" type="password" />
+                    <input placeholder="password" name="password" type="password" />
                 </div>
                 <div class="loginButtonContainer">
                     <button type="submit">Login</button>

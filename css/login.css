@@ -176,7 +176,8 @@ body#loginBody{
 .bannerHeader h1{
     font-size: 100px;
     text-transform: uppercase;
-    color: var(--celeste)
+    color: var(--celeste);
+    margin-top: -50px;
 }
 .bannerHeader p{
     font-size: 43px;
@@ -190,6 +191,7 @@ body#loginBody{
     margin-top: 20px;
     font-size: 38px;
     color: black;
+    margin-top: -10px;
 }
 
 .bannerIcons{
@@ -443,4 +445,12 @@ body#loginBody{
 .contentMain{
     background: white;
     height: 500px;
+}
+
+div#errorMessage{
+    background: white;
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
 }
