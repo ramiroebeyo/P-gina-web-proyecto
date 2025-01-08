@@ -10,19 +10,37 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = 'SELECT * FROM users WHERE users.email="'. $username .'" AND users.password= "'. $password .'"';
-        $stmt = $conn->prepare($query);
+        //$query = 'SELECT * FROM users WHERE users.email="'. $username .'" AND users.password= "'. $password .'"';
+        //$stmt = $conn->prepare($query);
+        //$stmt->execute();
+        
+        
+
+        //if($stmt->rowCount() > 0){
+            //$stmt->setFetchMode(PDO::FETCH_ASSOC);
+            //$user = $stmt->fetchAll()[0];
+            //$_SESSION['user'] = $user;
+
+            //header('Location: dashboard.php');
+        //} else $error_message = 'El nombre de usuario o la contraseña no son correctos';
+        $stmt = $conn->prepare("SELECT * FROM users");
         $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
         
+        $users = $stmt->fetchAll();
+
+        $user_exist = 0;
+        foreach($users as $user){
+            $upass = $user['password'];
+            if($upass == $password){
+                $user_exist +=1;
+                $_SESSION['user'] = $user;
+                break;
+            }
+        }
         
-
-        if($stmt->rowCount() > 0){
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $user = $stmt->fetchAll()[0];
-            $_SESSION['user'] = $user;
-
-            header('Location: dashboard.php');
-        } else $error_message = 'El nombre de usuario o la contraseña no son correctos';
+        if($user_exist > 0) header('location: dashboard.php');
+        else $error_message = 'El nombre de usuario o la contraseña no son correctos';
 
     }
 ?>
