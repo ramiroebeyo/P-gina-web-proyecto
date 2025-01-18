@@ -29,17 +29,19 @@
         
         $users = $stmt->fetchAll();
 
-        $user_exist = 0;
+        
+        $user_exist = false;
         foreach($users as $user){
             $upass = $user['password'];
-            if($upass == $password){
-                $user_exist +=1;
+            
+            if(password_verify($password, $upass)){
+                $user_exist = true;
                 $_SESSION['user'] = $user;
                 break;
             }
         }
         
-        if($user_exist > 0) header('location: dashboard.php');
+        if($user_exist) header('location: dashboard.php');
         else $error_message = 'El nombre de usuario o la contraseña no son correctos';
 
     }
