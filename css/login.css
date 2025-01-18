@@ -107,7 +107,7 @@ body#loginBody{
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
-    color: white
+    color: white;
 }
 .loginInputsContainer input{
     height: 45px;
@@ -116,7 +116,7 @@ body#loginBody{
     font-size: 30px;
     text-align: center;
 }
-.loginInputsContainer :placeholder-shown{
+.loginInputsContainer input:placeholder-shown{
     font-style: italic;
 }
 
@@ -188,10 +188,9 @@ body#loginBody{
 }
 
 .bannerTagline{
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 38px;
     color: black;
-    margin-top: -10px;
 }
 
 .bannerIcons{
@@ -454,3 +453,4 @@ div#errorMessage{
     text-align: center;
     padding: 10px;
 }
+
