@@ -4,7 +4,7 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>IMS - Homepage</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="https://kit.fontawesome.com/c3935f05a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -61,23 +61,25 @@
     </div>
     <div class="footer">
         <div class="homepageContainer3">
-            <div class="facebook">    
-                <a class href=""><i class="fa fa-facebook"></i></a>
-            </div>  
-            <div class="twitter">
-                <a href=""><i class="fa fa-twitter"></i></a>
-            </div>
-            <div class="instagram">   
-                <a href=""><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="youtube">
-                <a href=""><i class="fa fa-youtube"></i></a>
-            </div>
-            <div class="whatsapp">
-                <a href=""><i class="fa fa-whatsapp"></i></a>
-            </div>
-            <div class="linkedin">
-                <a href=""><i class="fa fa-linkedin"></i></a>
+            <div class="socials">
+                <div>    
+                    <a class href=""><i class="fa fa-facebook"></i></a>
+                </div>  
+                <div>
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                </div>
+                <div>   
+                    <a href=""><i class="fa fa-instagram"></i></a>
+                </div>
+                <div>
+                    <a href=""><i class="fa fa-youtube"></i></a>
+                </div>
+                <div>
+                    <a href=""><i class="fa fa-whatsapp"></i></a>
+                </div>
+                <div>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
             </div>
         </div>        
     </div>

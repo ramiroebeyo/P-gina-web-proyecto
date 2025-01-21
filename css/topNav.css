@@ -1,0 +1,17 @@
+.contentTopNav{
+    background: white;
+    padding: 25px;
+}
+.contentTopNav a{
+    font-size: 30px;
+    color: var(--gris);
+    text-decoration: none;
+}
+.contentTopNav a.navicon{
+    font-size: 40px;
+    margin-top: 5px;
+}
+.contentTopNav a.power-off{
+    float: right;
+    margin-top: 7px;
+}

@@ -15,19 +15,21 @@ if(strlen($user['first_name']) > 12){
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>IMS - Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="css/topNav.css">
     <script src="https://kit.fontawesome.com/c3935f05a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <script>
         // elimina el scroll
-        document.addEventListener("DOMContentLoaded", () => {
+        //document.addEventListener("DOMContentLoaded", () => {
             // Asegura que el `html` y `body` estén configurados correctamente
-            document.documentElement.style.overflow = "hidden";
-            document.documentElement.style.height = "100%";
-            document.body.style.overflow = "hidden";
-            document.body.style.height = "100%";
-        });
+            //document.documentElement.style.overflow = "hidden";
+            //document.documentElement.style.height = "100%";
+            //document.body.style.overflow = "hidden";
+            //document.body.style.height = "100%";
+        //});
     </script>
 
 <div id="dashboardContainer">

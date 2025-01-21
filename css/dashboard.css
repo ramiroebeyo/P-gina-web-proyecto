@@ -6,7 +6,6 @@
     --grisOscuro: rgb(41, 41, 41);
     --gris: rgba(108, 108, 108, 0.628);
     --grisClaro: rgb(223, 223, 223);
-    --rojoClaro: rgb(220, 105, 105);
 }
 /***** Css Reset *****/  
 html, body, div, span, applet, object, iframe,
@@ -57,70 +56,28 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
-
-.contentMain{
-    height: 100vh;
+#dashboardContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
 }
 
-form::after{
-    content: '';
-    clear: both;
-    display: block;
-}
-
-form.userForm{
-    margin-left: 25%;
-    width: 50%;
-    padding: 10px;
-    border: 2.5px solid var(--grisOscuro);
-    border-radius: 5px;
-    background: var(--grisClaro);
-}
-
-form label{
-    color: black;
-    text-transform: uppercase;
-    font-size: 20px;
-}
-
-.userFormInput{
+.content{
+    padding: 40px 10px 10px 10px;
+    min-height: 900px;
+    height: 1%;
     width: 100%;
-    height: 25px;
-    border: 1px solid var(--gris);
-    border-radius: 5px; 
+    margin-left: -10px;
+}
+.contentMain{
+    background: white;
+    height: 100%;
 }
 
-.userFormInputContainer{
-    margin-bottom: 20px;
-}
-
-div#userFormContainer{
-    padding-top: 50px;
-}
-
-.userBtn{
-    background: var(--celeste);
-    border: 1px solid var(--gris);
-    border-radius: 7px;
-    padding: 15px;
+div#errorMessage{
+    background: white;
+    color: red;
     font-size: 20px;
-    float: right;
-    margin-right: 5px;
-}
-
-p.responseMessage{
-    font-size: 25px;
     text-align: center;
-    margin-top: 33px;
-    background: var(--grisClaro);
-    padding: 15px;
-    background-size: 50%;
-}
-
-p.responseMessage__error{
-    background: var(--rojoClaro);
-}
-
-p.responseMessage__success{
-    background-color: var(--celesteActive);
+    padding: 10px;
 }
