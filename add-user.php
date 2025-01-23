@@ -52,6 +52,10 @@ if(strlen($user['first_name']) > 12){
                                     <input type="text" class="userFormInput" id="last_name" name="last_name"/>
                                 </div>
                                 <div class="userFormInputContainer">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="userFormInput" id="username" name="username"/>
+                                </div>
+                                <div class="userFormInputContainer">
                                     <label for="email">Email</label>
                                     <input type="email" class="userFormInput" id="email" name="email"/>
                                 </div>

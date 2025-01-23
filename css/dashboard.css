@@ -73,11 +73,3 @@ body{
     background: white;
     height: 100%;
 }
-
-div#errorMessage{
-    background: white;
-    color: red;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
-}

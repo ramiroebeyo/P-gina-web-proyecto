@@ -8,7 +8,7 @@
         <ul class="menuLists">
             <!-- class="menuActive" -->
             <li class="liMainMenu">
-                <a id="menuIcons" href="dashboard.php"><i class="fa fa-dashboard"></i> <span class="menuWords">Dashboard</span></a>
+                <a id="menuIcons" href="dashboard.php"><i class="fa fa-jedi"></i> <span class="menuWords">Dashboard</span></a>
             </li>
             <li class="liMainMenu">
                 <a id="menuIcons2" href="add-product.php"><i class="fa fa-tag  "></i> <span class="menuWords">products</span></a>
@@ -20,18 +20,11 @@
                 <a id="menuIcons4" href="add-supplier.php"><i class="fa fa-truck"></i> <span class="menuWords">suppliers</span></a>
             </li>
             <li class="liMainMenu">
-                <a id="menuIcons5" href=""><i class="fa fa-chart-simple"></i> <span class="menuWords">Estadisticas</span></a>
+                <a id="menuIcons5" href=""><i class="fa fa-clipboard-list"></i> <span class="menuWords">orders</span></a>
             </li>
             
             <li class="liMainMenu">
-                <a id="menuIcons1" href="add-user.php">
-                    <i class="fa fa-user-plus"></i> 
-                    <span class="menuWords">users</span><a href="" id="SubMenuArrow"><i class="fa fa-angle-up menuIcons1angle"></i></a> 
-                </a>
-                <ul class="subMenu">
-                    <li><a href=""><i class="fa fa-circle"></i>view users</a></li>
-                    <li><a href="add-user.php"><i class="fa fa-circle"></i>create users</a></li>
-                </ul>
+                <a id="menuIcons1" href="see-users.php"><i class="fa fa-user-plus"></i> <span class="menuWords">users</span></a>
             </li>
         </ul>
     </div>

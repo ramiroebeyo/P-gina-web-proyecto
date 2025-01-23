@@ -33,8 +33,9 @@
         $user_exist = false;
         foreach($users as $user){
             $upass = $user['password'];
+            $uname = $user['username'];
             
-            if(password_verify($password, $upass)){
+            if($uname == $username && password_verify($password, $upass)){
                 $user_exist = true;
                 $_SESSION['user'] = $user;
                 break;
@@ -61,7 +62,9 @@
         if(!empty($error_message)) { ?>
     <div id="errorMessage">
         <p>
-            Error: <?= $error_message ?> 
+            <span style="color: red; background-color: white; display: block; text-align: center; padding: 15px; border-bottom: 2px solid red; border-top: 2px solid red; font-size: 30px;">
+                Error: <?= $error_message ?>
+            </span>
         </p>
     <?php } ?>
     </div>

@@ -5,10 +5,11 @@
     
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $encrypted = password_hash($password, PASSWORD_DEFAULT);
-    if($first_name == '' || $last_name == '' || $email == '' || $password == ''){
+    if($first_name == '' || $last_name == '' || $username == '' || $email == '' || $password == ''){
         $response = [
             'success' => false,
             'message' => 'All fields are required'
@@ -18,8 +19,8 @@
         exit();
     }
     try{
-    $insert_method = "INSERT INTO $table_name(first_name, last_name, email, password, created_at, updated_at) 
-                        VALUES ('".$first_name."', '".$last_name."', '".$email."', '".$encrypted."', NOW(), NOW())";
+    $insert_method = "INSERT INTO $table_name(first_name, last_name, username, email, password, created_at, updated_at) 
+                        VALUES ('".$first_name."', '".$last_name."', '".$username."', '".$email."', '".$encrypted."', NOW(), NOW())";
     include('connection.php');
 
     var_dump($password);
