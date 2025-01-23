@@ -1,3 +1,5 @@
+//sidebar open/close
+
 var sidebarOpen = true;
 
     Navicon.addEventListener( 'click', (event) => {
@@ -47,3 +49,4 @@ var sidebarOpen = true;
             }    
         }              
     });    
+

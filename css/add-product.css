@@ -6,6 +6,7 @@
     --grisOscuro: rgb(41, 41, 41);
     --gris: rgba(108, 108, 108, 0.628);
     --grisClaro: rgb(223, 223, 223);
+    --rojoClaro: rgb(220, 105, 105);
 }
 /***** Css Reset *****/  
 html, body, div, span, applet, object, iframe,
@@ -56,26 +57,78 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
-.menuLists li.liMainMenu li{
-    font-size: 30px;
-    padding-top: 20px;
-    text-transform: none;
+
+.contentMain{
+    height: 100vh;
 }
 
-.menuLists li.liMainMenu li i{
+form::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+form.productForm{
+    margin-left: 25%;
+    width: 50%;
+    padding: 10px;
+    border: 2.5px solid var(--grisOscuro);
+    border-radius: 5px;
+    background: var(--grisClaro);
+}
+
+form label{
+    color: black;
+    text-transform: uppercase;
     font-size: 20px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 15px;
 }
 
-.menuLists li.liMainMenu a i.menuIcons1angle{
+.productFormInput{
+    width: 100%;
+    height: 25px;
+    border: 1px solid var(--gris);
+    border-radius: 5px; 
+}
+
+.productFormInputContainer{
+    margin-bottom: 20px;
+}
+
+div#productFormContainer{
+    padding-top: 50px;
+}
+
+.productBtn{
+    background: var(--celeste);
+    border: 1px solid var(--gris);
+    border-radius: 7px;
+    padding: 15px;
     font-size: 20px;
-    margin-left: 15px;
-    vertical-align: middle;
-    margin-right: 50px;
+    float: right;
+    margin-right: 5px;
 }
 
-.menuLists .subMenu{
-    display: all;
+p.responseMessage{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 33px;
+    background: var(--grisClaro);
+    padding: 15px;
+    background-size: 50%;
+}
+
+p.responseMessage__error{
+    background: var(--rojoClaro);
+}
+
+p.responseMessage__success{
+    background-color: var(--celesteActive);
+}
+
+
+.productDescriptionTextarea{
+    width: 100%;
+    height: 100px;
+    border: 1px solid var(--gris);
+    border-radius: 5px;
 }

@@ -42,7 +42,7 @@
         }
         
         if($user_exist) header('location: dashboard.php');
-        else $error_message = 'El nombre de usuario o la contraseña no son correctos';
+        else $error_message = 'Password or username is incorrect';
 
     }
 ?>

@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['user'])) header('location: index.php');
 $user = $_SESSION['user']; 
-$_SESSION['table'] = 'users';
+$_SESSION['table'] = 'products';
 
 if(strlen($user['first_name']) > 12){
     $user['first_name'] = substr($user['first_name'], 0, 10);
@@ -15,12 +15,12 @@ if(strlen($user['first_name']) > 12){
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>IMS - Add-user</title>
+    <title>IMS - Add-product</title>
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="css/topNav.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar.css">
     <link rel="stylesheet" type="text/css" href="css/sidebarSubMenu.css">
-    <link rel="stylesheet" type="text/css" href="css/add-user.css">
+    <link rel="stylesheet" type="text/css" href="css/add-product.css">
     <script src="https://kit.fontawesome.com/c3935f05a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -41,26 +41,26 @@ if(strlen($user['first_name']) > 12){
             <?php include('partials/topNav.php'); ?>
                 <div class="content">
                     <div class="contentMain">
-                        <div id="userFormContainer">
-                            <form action="database/user-add.php" method="POST" class="userForm">
-                                <div class="userFormInputContainer">
-                                    <label for="first_name">First Name</label>
-                                    <input type="text" class="userFormInput" id="first_name" name="first_name"/>
+                        <div id="productFormContainer">
+                            <form action="database/product-add.php" method="POST" class="productForm">
+                                <div class="productFormInputContainer">
+                                    <label for="product_name">Product Name</label>
+                                    <input type="text" class="productFormInput" id="product_name" name="product_name"/>
                                 </div>
-                                <div class="userFormInputContainer">
-                                    <label for="last_name">Last Name</label>
-                                    <input type="text" class="userFormInput" id="last_name" name="last_name"/>
+                                <div class="productFormInputContainer">
+                                    <label for="quantity">Product quantity</label>
+                                    <input type="number" class="productFormInput" id="quantity" name="quantity"/>
                                 </div>
-                                <div class="userFormInputContainer">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="userFormInput" id="email" name="email"/>
+                                <div class="productFormInputContainer">
+                                    <label for="location">Product Location</label>
+                                    <textarea class="productFormInput productDescriptionTextarea" id="location" name="location"/></textarea>
                                 </div>
-                                <div class="userFormInputContainer">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="userFormInput" id="password" name="password"/>
+                                <div class="productFormInputContainer">
+                                    <label for="description">Product Description</label>
+                                    <textarea class="productFormInput productDescriptionTextarea" id="description" name="description"/></textarea>
                                 </div>
                                 <div>
-                                    <button type="submit" class="userBtn"><i class="fa fa-plus"></i> Add User </button>
+                                    <button type="submit" class="productBtn"><i class="fa fa-plus"></i> Create Product </button>
                                 </div>
                             </form>
                             <?php if(isset($_SESSION['response'])){ 

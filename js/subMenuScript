@@ -1,0 +1,12 @@
+var subMenuOpen = false;
+
+    subMenuArrow.addEventListener( 'click', (event) => {
+        event.preventDefault();
+        if(subMenuOpen == false){
+            subMenuOpen = true;
+            subMenu.style.display = 'block';
+        } else {
+            subMenuOpen = false;
+            subMenu.style.display = 'none';
+        }
+    });
