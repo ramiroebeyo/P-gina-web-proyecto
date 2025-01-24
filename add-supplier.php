@@ -48,8 +48,12 @@ if(strlen($user['first_name']) > 12){
                                     <input type="text" class="productFormInput" id="supplier_name" name="supplier_name"/>
                                 </div>
                                 <div class="productFormInputContainer">
-                                    <label for="supplier_location">Supplier Description</label>
+                                    <label for="supplier_location">Supplier Location</label>
                                     <textarea class="productFormInput productDescriptionTextarea" id="supplier_location" name="supplier_location"/></textarea>
+                                </div>
+                                <div class="productFormInputContainer">
+                                    <label for="supplier_description">Supplier Description</label>
+                                    <textarea class="productFormInput productDescriptionTextarea" id="supplier_description" name="supplier_description"/></textarea>
                                 </div>
                                 <div class="productFormInputContainer">
                                     <label for="email">Supplier Email</label>

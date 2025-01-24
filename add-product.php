@@ -8,6 +8,8 @@ if(strlen($user['first_name']) > 12){
     $user['first_name'] = substr($user['first_name'], 0, 10);
     $user['first_name'] .= "...";
 } 
+
+include('database/connection.php');
 ?>
 
 <!DOCTYPE html>
@@ -52,8 +54,34 @@ if(strlen($user['first_name']) > 12){
                                     <input type="number" class="productFormInput" id="quantity" name="quantity"/>
                                 </div>
                                 <div class="productFormInputContainer">
-                                    <label for="location">Product Location</label>
-                                    <textarea class="productFormInput productDescriptionTextarea" id="location" name="location"/></textarea>
+                                    <label for="location">Product location</label>
+                                    <?php 
+                                            $sql = "SELECT location_name FROM locations;";
+                                            $stmt = $conn->prepare($sql);
+                                            $stmt->execute();
+                                            
+                                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        ?>
+                                    <select name="location" class="productFormInput"> 
+                                        <?php foreach($rows as $row): ?>
+                                                <option><?php echo $row['location_name'];?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="productFormInputContainer">
+                                    <label for="supplier">Product supplier</label>
+                                    <?php 
+                                            $sql = "SELECT supplier_name FROM suppliers;";
+                                            $stmt = $conn->prepare($sql);
+                                            $stmt->execute();
+                                            
+                                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        ?>
+                                    <select name="supplier" class="productFormInput"> 
+                                        <?php foreach($rows as $row): ?>
+                                                <option><?php echo $row['supplier_name'];?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                                 <div class="productFormInputContainer">
                                     <label for="description">Product Description</label>

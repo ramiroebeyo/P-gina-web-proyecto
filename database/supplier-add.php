@@ -4,7 +4,7 @@
     $table_name = $_SESSION['table'];
     
     $supplier_name = $_POST['supplier_name'];
-    $description = $_POST['supplier_location'];
+    $location = $_POST['supplier_location'];
     $email = $_POST['email'];
     $creator = $_SESSION['user']['id'];
     if($supplier_name == ''){
@@ -26,8 +26,8 @@
         exit();
     }
     try{
-    $insert_method = "INSERT INTO $table_name(supplier_name, supplier_location, email, created_by, created_at, updated_at) 
-                        VALUES ('".$supplier_name."', '".$description."', '".$email."', '".$creator."', NOW(), NOW())";
+    $insert_method = "INSERT INTO $table_name(supplier_name, supplier_location, supplier_description, email, created_by, created_at, updated_at) 
+                        VALUES ('".$supplier_name."', '".$location."', '".$description."', '".$email."', '".$creator."', NOW(), NOW())";
     include('connection.php');
 
     $response = [

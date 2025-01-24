@@ -11,7 +11,7 @@
                 <a id="menuIcons" href="dashboard.php"><i class="fa fa-jedi"></i> <span class="menuWords">Dashboard</span></a>
             </li>
             <li class="liMainMenu">
-                <a id="menuIcons2" href="add-product.php"><i class="fa fa-tag  "></i> <span class="menuWords">products</span></a>
+                <a id="menuIcons2" href="see-products.php"><i class="fa fa-tag  "></i> <span class="menuWords">products</span></a>
             </li>
             <li class="liMainMenu">
                 <a id="menuIcons3" href=""><i class="fa fa-map"></i> <span class="menuWords">locations</span></a>

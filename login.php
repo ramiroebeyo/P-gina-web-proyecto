@@ -62,9 +62,7 @@
         if(!empty($error_message)) { ?>
     <div id="errorMessage">
         <p>
-            <span style="color: red; background-color: white; display: block; text-align: center; padding: 15px; border-bottom: 2px solid red; border-top: 2px solid red; font-size: 30px;">
                 Error: <?= $error_message ?>
-            </span>
         </p>
     <?php } ?>
     </div>
