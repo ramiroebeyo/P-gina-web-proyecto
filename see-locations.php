@@ -28,22 +28,22 @@
                 <?php include('partials/topNav.php'); ?>
                 <div class="content">
                     <div class="contentMain">
-                        <label for="table" class="products">Users</label>
-                        <div class="tableContainer">
+                        <div>
+                            <label for="table" class="products">Locations</label>
                             <table class="seeTable">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
+                                        <th>Location Name</th>
+                                        <th>Location Description</th>
+                                        <th>Created_by</th>
                                         <th>Created_at</th>
                                         <th>Updated_at</th>
                                     </tr>
                                 </thead>
+                                
                                 <?php 
-                                    $sql = "SELECT id, first_name, last_name, username, email, created_at, updated_at FROM users;";
+                                    $sql = "SELECT * FROM locations;";
                                     $stmt = $conn->prepare($sql);
                                     $stmt->execute();
                                     
@@ -53,10 +53,9 @@
                                     <?php foreach($rows as $row): ?>
                                     <tr>
                                         <td><?php echo $row['id'];?></td>
-                                        <td><?php echo $row['first_name'];?></td>                    
-                                        <td><?php echo $row['last_name'];?></td>
-                                        <td><?php echo $row['username'];?></td>
-                                        <td><?php echo $row['email'];?></td>
+                                        <td><?php echo $row['location_name'];?></td>                    
+                                        <td><?php echo $row['location_description'];?></td>
+                                        <td><?php echo $row['created_by'];?></td>|
                                         <td><?php echo $row['created_at'];?></td>
                                         <td><?php echo $row['updated_at'];?></td>
                                     </tr>
@@ -64,17 +63,13 @@
                                 </tbody>
                             </table>
                             <div class="createButtonContainer">
-                                <a href="add-user.php">
-                                    <button type="submit" class="productBtn">Create User</button>
-                                </a>
+                                <a href="add-location.php"><button type="submit">Add Location</button></a>
                             </div>
                         </div>
-                        
-                    </div>  
-                </div>        
-            </div>
+                    </div>
+                </div>  
+            </div>        
         </div>
         <script src="js/script.js"></script>        
     </body>
 </html>
-

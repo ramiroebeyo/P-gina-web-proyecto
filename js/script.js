@@ -7,7 +7,8 @@ var sidebarOpen = true;
 
         if(sidebarOpen == true){
             sidebarOpen = false;
-            sidebar.style.width = '4%';
+            sidebar.style.width = '4%';       
+            sidebar.style.height = '120vh';
             sidebar.style.transition = '0.3s all';
             contentIcons.style.width = '96%';
             logo.style.fontSize = '30px';
@@ -29,11 +30,13 @@ var sidebarOpen = true;
         } else {
             menuIcons.style.marginLeft = '110px';
             menuIcons1.style.marginLeft = '110px';
+            menuIcons1.style.paddingBottom = '100px';
             menuIcons2.style.marginLeft = '110px';
             menuIcons3.style.marginLeft = '110px';
             menuIcons4.style.marginLeft = '110px';
             menuIcons5.style.marginLeft = '110px';
             sidebarOpen = true;
+            sidebar.style.height = '120vh';
             sidebar.style.width = '25%';
             sidebar.style.transition = '0.16 all';
             contentIcons.style.width = '75%';

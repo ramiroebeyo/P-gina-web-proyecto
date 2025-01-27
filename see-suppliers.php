@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['user'])) header('location: index.php');
     $user = $_SESSION['user']; 
-    $_SESSION['table'] = 'users';
+    $_SESSION['table'] = 'suppliers';
     
     if(strlen($user['first_name']) > 12){
         $user['first_name'] = substr($user['first_name'], 0, 10);
@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ims - See products</title>
+        <title>Ims - See suppliers</title>
         <link rel="stylesheet" type="text/css" href="css/dashboard.css">
         <link rel="stylesheet" type="text/css" href="css/topNav.css">
         <link rel="stylesheet" type="text/css" href="css/sidebar.css">
@@ -28,22 +28,26 @@
                 <?php include('partials/topNav.php'); ?>
                 <div class="content">
                     <div class="contentMain">
-                        <label for="table" class="products">Users</label>
-                        <div class="tableContainer">
+                        <div>
+                            <label for="table" class="products">Suppliers</label>
                             <table class="seeTable">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
+                                        <th>Supplier Name</th>
+                                        <th>Supplier cuit</th>
+                                        <th>Supplier location</th>
+                                        <th>Supplier Description</th>
+                                        <th>Supplier Email</th>
+                                        <th>Created_by</th>
                                         <th>Created_at</th>
                                         <th>Updated_at</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
+                                
                                 <?php 
-                                    $sql = "SELECT id, first_name, last_name, username, email, created_at, updated_at FROM users;";
+                                    $sql = "SELECT * FROM suppliers;";
                                     $stmt = $conn->prepare($sql);
                                     $stmt->execute();
                                     
@@ -53,28 +57,29 @@
                                     <?php foreach($rows as $row): ?>
                                     <tr>
                                         <td><?php echo $row['id'];?></td>
-                                        <td><?php echo $row['first_name'];?></td>                    
-                                        <td><?php echo $row['last_name'];?></td>
-                                        <td><?php echo $row['username'];?></td>
+                                        <td><?php echo $row['supplier_name'];?></td> 
+                                        <td><?php echo $row['supplier_cuit'];?></td>                    
+                                        <td><?php echo $row['supplier_location'];?></td>
+                                        <td><?php echo $row['supplier_description'];?></td>                                    
                                         <td><?php echo $row['email'];?></td>
+                                        <td><?php echo $row['created_by'];?></td>
                                         <td><?php echo $row['created_at'];?></td>
                                         <td><?php echo $row['updated_at'];?></td>
+                                        <td class="editBtn"> 
+                                            <a href="edit-supplier.php?id=<?php echo $row['id'];?>"><i class="fa fa-pen-to-square"></i></a>
+                                        </td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
                             <div class="createButtonContainer">
-                                <a href="add-user.php">
-                                    <button type="submit" class="productBtn">Create User</button>
-                                </a>
+                                <a href="add-supplier.php"><button type="submit">Add Supplier</button></a>
                             </div>
                         </div>
-                        
-                    </div>  
-                </div>        
-            </div>
+                    </div>
+                </div>  
+            </div>        
         </div>
         <script src="js/script.js"></script>        
     </body>
 </html>
-

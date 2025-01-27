@@ -48,6 +48,10 @@ if(strlen($user['first_name']) > 12){
                                     <input type="text" class="productFormInput" id="supplier_name" name="supplier_name"/>
                                 </div>
                                 <div class="productFormInputContainer">
+                                    <label for="supplier_cuit">Supplier Cuit</label>
+                                    <input type="number" class="productFormInput" id="supplier_cuit" name="supplier_cuit"/>
+                                </div>
+                                <div class="productFormInputContainer">
                                     <label for="supplier_location">Supplier Location</label>
                                     <textarea class="productFormInput productDescriptionTextarea" id="supplier_location" name="supplier_location"/></textarea>
                                 </div>
@@ -60,7 +64,7 @@ if(strlen($user['first_name']) > 12){
                                     <input type="email" class="productFormInput" id="email" name="email"/>
                                 </div>
                                 <div>
-                                    <button type="submit" class="productBtn"><i class="fa fa-plus"></i> Create Supplier </button>
+                                    <button type="submit" name="create_btn" class="productBtn"><i class="fa fa-plus"></i> Create Supplier </button>
                                 </div>
                             </form>
                             <?php if(isset($_SESSION['response'])){ 

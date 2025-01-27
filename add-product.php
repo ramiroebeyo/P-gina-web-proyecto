@@ -21,7 +21,6 @@ include('database/connection.php');
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="css/topNav.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="css/sidebarSubMenu.css">
     <link rel="stylesheet" type="text/css" href="css/add-product.css">
     <script src="https://kit.fontawesome.com/c3935f05a0.js" crossorigin="anonymous"></script>
 </head>
