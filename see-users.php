@@ -63,13 +63,12 @@
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
-                            <div class="createButtonContainer">
+                        </div>
+                        <div class="createButtonContainer">
                                 <a href="add-user.php">
                                     <button type="submit" class="productBtn">Create User</button>
                                 </a>
                             </div>
-                        </div>
-                        
                     </div>  
                 </div>        
             </div>
