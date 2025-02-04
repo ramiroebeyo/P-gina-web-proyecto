@@ -40,6 +40,7 @@
                                         <th>Email</th>
                                         <th>Created_at</th>
                                         <th>Updated_at</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <?php 
@@ -59,16 +60,22 @@
                                         <td><?php echo $row['email'];?></td>
                                         <td><?php echo $row['created_at'];?></td>
                                         <td><?php echo $row['updated_at'];?></td>
+                                        <td class="editBtn"> 
+                                            <a href="edit-user.php?id=<?php echo $row['id'];?>"><i class="fa fa-pen-to-square"></i></a>
+                                        </td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
                         <div class="createButtonContainer">
-                                <a href="add-user.php">
-                                    <button type="submit" class="productBtn">Create User</button>
-                                </a>
-                            </div>
+                            <a href="add-user.php">
+                                <button type="submit" class="productBtn">Create User</button>
+                            </a>
+                        </div>
+                        <div class="downloadButtonContainer">
+                            <a href="download-users.php"class="download" ><button type="submit">Download to Excel</button></a>
+                        </div>
                     </div>  
                 </div>        
             </div>

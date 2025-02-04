@@ -75,10 +75,10 @@
                                 </table>
                                 <div class="createButtonContainer">
                                     <a href="add-supplier.php" class="add"><button type="submit">Add Supplier</button></a>
-                                </div>    
+                                </div>
                                 <div class="downloadButtonContainer">
-                                    <a href="download-supplier.php"class="download" ><button type="submit">Download to Excel</button></a>
-                                </div> 
+                                    <a href="download-suppliers.php"class="download" ><button type="submit">Download to Excel</button></a>
+                                </div>
                             </div>                
                         </div>
                     </div>

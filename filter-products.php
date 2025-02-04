@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('database/connection.php');
     if(!isset($_SESSION['user'])) header('location: index.php');
     $user = $_SESSION['user']; 
     $_SESSION['table'] = 'users';
@@ -8,7 +9,39 @@
         $user['first_name'] = substr($user['first_name'], 0, 10);
         $user['first_name'] .= "...";
     }
-    include('database/connection.php');
+
+    $sqlSupp = "SELECT supplier_name FROM suppliers;";
+    $stmtSupp = $conn->prepare($sqlSupp);
+    $stmtSupp->execute();
+    
+    $rowsSupp = $stmtSupp->fetchAll(PDO::FETCH_ASSOC);
+
+    $sqlLoc = "SELECT location_name FROM locations;";
+    $stmtLoc = $conn->prepare($sqlLoc);
+    $stmtLoc->execute();
+    
+    $rowsLoc = $stmtLoc->fetchAll(PDO::FETCH_ASSOC);
+
+    if(isset($_POST['filter_btn'])){
+        $table_name = $_SESSION['table'];
+
+        $supplier = $_POST['supplier'];
+
+        if ($supplier == 'Filter'){
+            header('location: see-products.php');
+            exit();
+        }
+        foreach($rowsSupp as $row){
+            if($supplier == $row['supplier_name']){
+                $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE supplier = :supplier;";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':supplier', $supplier);
+                $stmt->execute();
+                
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +88,7 @@
                                         </div>
                                     </select>
                                     <a href="filter-products.php">
-                                        <button type="submit" name="filter_btn" style="background: rgb(223, 223, 223); border: 1px solid rgba(108, 108, 108, 0.628); border-radius: 7px; font-size: 20px; padding: 15px;" onmousedown="this.style.background='rgb(200, 200, 200)'" onmouseup="this.style.background='rgb(223, 223, 223)'">OK</button>
+                                        <button type="submit" style="background: rgb(223, 223, 223); border: 1px solid rgba(108, 108, 108, 0.628); border-radius: 7px; font-size: 20px; padding: 15px;" onmousedown="this.style.background='rgb(200, 200, 200)'" onmouseup="this.style.background='rgb(223, 223, 223)'">OK</button>
                                     </a>
                             <div class="tableContainer">
                                 <table class="seeTable">

@@ -8,9 +8,6 @@
         <ul class="menuLists">
             <!-- class="menuActive" -->
             <li class="liMainMenu">
-                <a id="menuIcons" href="dashboard.php"><i class="fa fa-jedi"></i> <span class="menuWords">Dashboard</span></a>
-            </li>
-            <li class="liMainMenu">
                 <a id="menuIcons2" href="see-products.php"><i class="fa fa-tag  "></i> <span class="menuWords">products</span></a>
             </li>
             <li class="liMainMenu">
@@ -20,7 +17,7 @@
                 <a id="menuIcons4" href="see-suppliers.php"><i class="fa fa-truck"></i> <span class="menuWords">suppliers</span></a>
             </li>
             <li class="liMainMenu">
-                <a id="menuIcons5" href=""><i class="fa fa-clipboard-list"></i> <span class="menuWords">orders</span></a>
+                <a id="menuIcons5" href="create-order.php"><i class="fa fa-clipboard-list"></i> <span class="menuWords">orders</span></a>
             </li>
             
             <li class="liMainMenu">

@@ -59,6 +59,7 @@ body{
 }
 
 .products{
+    vertical-align: middle;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -130,8 +131,8 @@ body{
     padding: 15px;
     font-size: 20px;
     float: right;
-    margin-right: 200px;
-    margin-top: 20px;
+    margin-right: 150px;
+    margin-top: 5px;
 }
 
 .downloadButtonContainer a button{
@@ -140,6 +141,24 @@ body{
     border-radius: 7px;
     padding: 15px;
     font-size: 20px;
-    float: left;
-    margin-left: 150px;
+    float: right;
+    margin-right: 20px;
+    vertical-align: middle;
+    margin-top: 5px;
 }  
+
+.filterSelect{
+    background: var(--grisClaro );
+    border: 1px solid var(--gris);
+    border-radius: 7px;
+    padding: 15px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: -50px;
+}
+
+.filterOptions option{
+    background: var(--grisMuyClaro);
+    color: white;
+}
+

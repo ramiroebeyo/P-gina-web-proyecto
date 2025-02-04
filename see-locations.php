@@ -40,6 +40,7 @@
                                             <th>Created_by</th>
                                             <th>Created_at</th>
                                             <th>Updated_at</th>
+                                            <th>Edit</th>
                                         </tr>
                                     </thead>
                                     
@@ -59,6 +60,9 @@
                                             <td><?php echo $row['created_by'];?></td>|
                                             <td><?php echo $row['created_at'];?></td>
                                             <td><?php echo $row['updated_at'];?></td>
+                                            <td class="editBtn"> 
+                                                <a href="edit-location.php?id=<?php echo $row['id'];?>"><i class="fa fa-pen-to-square"></i></a>
+                                            </td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -66,6 +70,9 @@
                             </div>
                             <div class="createButtonContainer">
                                 <a href="add-location.php"><button type="submit">Add Location</button></a>
+                            </div>
+                            <div class="downloadButtonContainer">
+                                <a href="download-locations.php"class="download" ><button type="submit">Download to Excel</button></a>
                             </div>
                         </div>
                     </div>
