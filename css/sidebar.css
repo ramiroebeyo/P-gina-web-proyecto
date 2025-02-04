@@ -118,7 +118,12 @@ body{
     font-size: 40px;
 }
 .menuLists li:hover{
-    background: var(--celeste);
+    background: var(--celesteHover);
     color: white;
     transition: 0.08s;
+}
+
+.menuActive{
+    background: var(--celeste);
+    color: white;
 }
