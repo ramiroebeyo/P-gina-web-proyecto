@@ -62,7 +62,7 @@
                                             <td><?php echo $row['supplier_cuit'];?></td>                    
                                             <td><?php echo $row['supplier_location'];?></td>
                                             <td><?php echo $row['supplier_description'];?></td>                                    
-                                            <td><?php echo $row['email'];?></td>
+                                            <td><?php echo $row['supplier_email'];?></td>
                                             <td><?php echo $row['created_by'];?></td>
                                             <td><?php echo $row['created_at'];?></td>
                                             <td><?php echo $row['updated_at'];?></td>

@@ -63,7 +63,7 @@ include('database/connection.php');
                                         ?>
                                     <select name="location" class="productFormInput"> 
                                         <?php foreach($rows as $row): ?>
-                                                <option><?php echo $row['location_name'];?></option>
+                                            <option><?php echo $row['location_name'];?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -87,7 +87,7 @@ include('database/connection.php');
                                     <textarea class="productFormInput productDescriptionTextarea" id="description" name="description"/></textarea>
                                 </div>
                                 <div>
-                                    <button type="submit" class="productBtn"><i class="fa fa-plus"></i> Create Product </button>
+                                    <button type="submit" name="create_btn" class="productBtn"><i class="fa fa-plus"></i> Create Product </button>
                                 </div>
                             </form>
                             <?php if(isset($_SESSION['response'])){ 

@@ -45,29 +45,31 @@ if(strlen($user['first_name']) > 12){
                             <form action="database/supplier-add.php" method="POST" class="productForm">
                                 <div class="productFormInputContainer">
                                     <label for="supplier_name">Supplier Name</label>
-                                    <input type="text" class="productFormInput" id="supplier_name" name="supplier_name"/>
+                                    <input type="text" class="productFormInput" id="supplier_name" name="supplier_name" value="<?php echo isset($_SESSION['old_data']['supplier_name']) ? $_SESSION['old_data']['supplier_name'] : ''; ?>"/>
                                 </div>
                                 <div class="productFormInputContainer">
                                     <label for="supplier_cuit">Supplier Cuit</label>
-                                    <input type="number" class="productFormInput" id="supplier_cuit" name="supplier_cuit"/>
+                                    <input type="text" class="productFormInput" id="supplier_cuit" name="supplier_cuit" value="<?php echo isset($_SESSION['old_data']['supplier_cuit']) ? $_SESSION['old_data']['supplier_cuit'] : ''; ?>"/>
                                 </div>
                                 <div class="productFormInputContainer">
                                     <label for="supplier_location">Supplier Location</label>
-                                    <textarea class="productFormInput productDescriptionTextarea" id="supplier_location" name="supplier_location"/></textarea>
+                                    <textarea class="productFormInput productDescriptionTextarea" id="supplier_location" name="supplier_location" /><?php echo isset($_SESSION['old_data']['supplier_location']) ? $_SESSION['old_data']['supplier_location'] : ''; ?></textarea>
                                 </div>
                                 <div class="productFormInputContainer">
                                     <label for="supplier_description">Supplier Description</label>
-                                    <textarea class="productFormInput productDescriptionTextarea" id="supplier_description" name="supplier_description"/></textarea>
+                                    <textarea class="productFormInput productDescriptionTextarea" id="supplier_description" name="supplier_description"/><?php echo isset($_SESSION['old_data']['supplier_description']) ? $_SESSION['old_data']['supplier_description'] : ''; ?></textarea>
                                 </div>
                                 <div class="productFormInputContainer">
-                                    <label for="email">Supplier Email</label>
-                                    <input type="email" class="productFormInput" id="email" name="email"/>
+                                    <label for="supplier_email">Supplier Email</label>
+                                    <input type="email" class="productFormInput" id="supplier_email" name="supplier_email" value="<?php echo isset($_SESSION['old_data']['supplier_email']) ? $_SESSION['old_data']['supplier_email'] : ''; ?>"/>
                                 </div>
                                 <div>
                                     <button type="submit" name="create_btn" class="productBtn"><i class="fa fa-plus"></i> Create Supplier </button>
                                 </div>
                             </form>
-                            <?php if(isset($_SESSION['response'])){ 
+                            <?php 
+                            unset($_SESSION['old_data']);
+                            if(isset($_SESSION['response'])){ 
                                     $response_message = $_SESSION['response']['message'];
                                     $is_success = $_SESSION['response']['success'];
                                 ?>

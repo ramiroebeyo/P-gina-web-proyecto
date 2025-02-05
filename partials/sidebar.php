@@ -10,21 +10,22 @@
     </div>
     <div class="sidebarMenu">
         <ul class="menuLists">
-            <li class="liMainMenu <?= ($current_page == 'see-products.php') ? 'menuActive' : '' ?>">
+            <li class="<?= ($current_page == 'see-products.php') ? 'menuActive' : '' ?>">
                 <a href="see-products.php"><i class="fa fa-tag"></i> <span class="menuWords">products</span></a>
             </li>
-            <li class="liMainMenu <?= ($current_page == 'see-locations.php') ? 'menuActive' : '' ?>">
+            <li class="<?= ($current_page == 'see-locations.php') ? 'menuActive' : '' ?>">
                 <a href="see-locations.php"><i class="fa fa-map"></i> <span class="menuWords">locations</span></a>
             </li>
-            <li class="liMainMenu <?= ($current_page == 'see-suppliers.php') ? 'menuActive' : '' ?>">
+            <li class="<?= ($current_page == 'see-suppliers.php') ? 'menuActive' : '' ?>">
                 <a href="see-suppliers.php"><i class="fa fa-truck"></i> <span class="menuWords">suppliers</span></a>
             </li>
-            <li class="liMainMenu <?= ($current_page == 'add-order.php') ? 'menuActive' : '' ?>">
+            <li class="<?= ($current_page == 'add-order.php') ? 'menuActive' : '' ?>">
                 <a href="add-order.php"><i class="fa fa-shopping-cart"></i> <span class="menuWords">orders</span></a>
             </li>
-            <li class="liMainMenu <?= ($current_page == 'see-users.php') ? 'menuActive' : '' ?>">
+            <li class="<?= ($current_page == 'see-users.php') ? 'menuActive' : '' ?>">
                 <a id="menuIcons1" href="see-users.php"><i class="fa fa-user-plus"></i> <span class="menuWords">users</span></a>
             </li>
         </ul>
     </div>
 </div>
+    

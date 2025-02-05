@@ -65,7 +65,7 @@ include('database/connection.php');
                                     </div>
                                     <div class="productFormInputContainer">
                                         <label for="supplier_cuit">Supplier Cuit</label>
-                                        <input type="number" class="productFormInput" id="supplier_cuit" name="supplier_cuit" value="<?= $supplier['supplier_cuit']; ?>"/>
+                                        <input type="text" class="productFormInput" id="supplier_cuit" name="supplier_cuit" value="<?= $supplier['supplier_cuit']; ?>"/>
                                     </div>
                                     <div class="productFormInputContainer">
                                         <label for="supplier_location">Supplier Location</label>
@@ -76,8 +76,8 @@ include('database/connection.php');
                                         <textarea class="productFormInput productDescriptionTextarea" id="supplier_description" name="supplier_description" value="<?= $supplier['supplier_description']; ?>"/><?= $supplier['supplier_description']; ?></textarea>
                                     </div>
                                     <div class="productFormInputContainer">
-                                        <label for="email">Supplier Email</label>
-                                        <input type="email" class="productFormInput" id="email" name="email" value="<?= $supplier['email']; ?>"/>
+                                        <label for="supplier_email">Supplier Email</label>
+                                        <input type="email" class="productFormInput" id="supplier_email" name="supplier_email" value="<?= $supplier['supplier_email']; ?>"/>
                                     </div>
                                     <div>
                                         <button type="submit" name="edit_btn" class="productBtn"><i class="fa fa-plus"></i> Edit Supplier </button>

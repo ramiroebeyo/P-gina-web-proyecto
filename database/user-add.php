@@ -38,5 +38,5 @@
     }
 
     $_SESSION['response'] = $response;
-    header('location: ../add-user.php');
+    header('location: ../see-users.php');
 ?>

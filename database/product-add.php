@@ -36,7 +36,7 @@ if(isset($_POST['create_btn'])){
 
     $response = [
         'success' => true,
-        'message' => $produt_name .' succesfully added to the system'
+        'message' => $product_name .' succesfully added to the system'
     ];  
     $conn->exec($insert_method);
 
@@ -48,6 +48,7 @@ if(isset($_POST['create_btn'])){
     }
 
     $_SESSION['response'] = $response;
+    header('location: ../add-product.php');
 } 
 
 if(isset($_POST['edit_btn'])){
@@ -86,10 +87,10 @@ if(isset($_POST['edit_btn'])){
         header('location: ../see-products.php');
         exit();
     }
-    if($quantity == ''){
+    if($quantity == '' || $quantity < 0){
         $response = [
             'success' => false,
-            'message' => 'Quantity is required'
+            'message' => 'Quantity value is not valid'
         ];
         $_SESSION['response'] = $response;
         header('location: ../edit-product.php');

@@ -31,32 +31,32 @@
                         <div>
                             <label for="table" class="products">Products</label>
                             <?php 
-                                            $sqlSupp = "SELECT supplier_name FROM suppliers;";
-                                            $stmtSupp = $conn->prepare($sqlSupp);
-                                            $stmtSupp->execute();
-                                            
-                                            $rowsSupp = $stmtSupp->fetchAll(PDO::FETCH_ASSOC);
+                                $sqlSupp = "SELECT supplier_name FROM suppliers;";
+                                $stmtSupp = $conn->prepare($sqlSupp);
+                                $stmtSupp->execute();
+                                
+                                $rowsSupp = $stmtSupp->fetchAll(PDO::FETCH_ASSOC);
 
-                                            $sqlLoc = "SELECT location_name FROM locations;";
-                                            $stmtLoc = $conn->prepare($sqlLoc);
-                                            $stmtLoc->execute();
-                                            
-                                            $rowsLoc = $stmtLoc->fetchAll(PDO::FETCH_ASSOC);
-                                        ?>
-                                    <select name="supplier" class="filterSelect"> 
-                                        <div class="filterOptions">
-                                            <option> Filter </option>
-                                            <?php foreach($rowsSupp as $row): ?>
-                                                <option><?php echo $row['supplier_name'];?></option>
-                                            <?php endforeach; ?>
-                                            <?php foreach($rowsLoc as $row): ?>
-                                                <option><?php echo $row['location_name'];?></option>
-                                            <?php endforeach; ?>                                            
-                                        </div>
-                                    </select>
-                                    <a href="filter-products.php">
-                                        <button type="submit" name="filter_btn" style="background: rgb(223, 223, 223); border: 1px solid rgba(108, 108, 108, 0.628); border-radius: 7px; font-size: 20px; padding: 15px;" onmousedown="this.style.background='rgb(200, 200, 200)'" onmouseup="this.style.background='rgb(223, 223, 223)'">OK</button>
-                                    </a>
+                                $sqlLoc = "SELECT location_name FROM locations;";
+                                $stmtLoc = $conn->prepare($sqlLoc);
+                                $stmtLoc->execute();
+                                
+                                $rowsLoc = $stmtLoc->fetchAll(PDO::FETCH_ASSOC);
+                            ?>
+                            <select name="supplier" class="filterSelect"> 
+                                <div class="filterOptions">
+                                    <option> Filter </option>
+                                    <?php foreach($rowsSupp as $row): ?>
+                                        <option><?php echo $row['supplier_name'];?></option>
+                                    <?php endforeach; ?>
+                                    <?php foreach($rowsLoc as $row): ?>
+                                        <option><?php echo $row['location_name'];?></option>
+                                    <?php endforeach; ?>                                            
+                                </div>
+                            </select>
+                            <a href="filter-products.php">
+                                <button type="submit" name="filter_btn" style="background: rgb(223, 223, 223); border: 1px solid rgba(108, 108, 108, 0.628); border-radius: 7px; font-size: 20px; padding: 15px;" onmousedown="this.style.background='rgb(200, 200, 200)'" onmouseup="this.style.background='rgb(223, 223, 223)'">OK</button>
+                            </a>
                             <div class="tableContainer">
                                 <table class="seeTable">
                                     <thead>

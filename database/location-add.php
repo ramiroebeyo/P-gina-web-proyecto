@@ -34,5 +34,5 @@
     }
 
     $_SESSION['response'] = $response;
-    header('location: ../add-location.php');
+    header('location: ../see-locations.php');
 ?>
