@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="homepageHeader">
-        <a href="login.php">Login</a>
+        <a href="/pagina-web-proyecto/login.php">Login</a>
     </div>
     <div class="banner">
         <div class="homepageContainer">
@@ -42,20 +42,6 @@
                 <span class="featureIcon"><i class="fa fa-globe"></i></span>
                 <h3>Llegá a tu público</h3>
                 <p class="publico">Con nuestras herramientas, podés llegar a una audiencia más amplia y aumentar tus ventas</p>
-            </div>
-        </div>
-    </div>
-    <div class="homepageNotified">
-        <div class="homepageContainer2">
-            <div class="emailForm">
-                <h3>Enterate de cualquier novedad!</h3>
-                <p> 
-                   Para recibir las últimas actualizaciones y noticias sobre IMS, ingresá tu correo electrónico a continuación
-                </p>
-                <div class="formContainer">
-                    <input type="text" placeholder="Email Address"/>
-                    <button>Enviar</button>
-                </div>
             </div>
         </div>
     </div>

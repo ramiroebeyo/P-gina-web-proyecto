@@ -57,7 +57,7 @@
                                             <td><?php echo $row['id'];?></td>
                                             <td><?php echo $row['location_name'];?></td>                    
                                             <td><?php echo $row['location_description'];?></td>
-                                            <td><?php echo $row['created_by'];?></td>|
+                                            <td><?php echo $row['created_by'];?></td>
                                             <td><?php echo $row['created_at'];?></td>
                                             <td><?php echo $row['updated_at'];?></td>
                                             <td class="editBtn"> 

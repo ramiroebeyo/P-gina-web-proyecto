@@ -102,7 +102,7 @@
                                 </table>
                             </div>      
                             <div class="createButtonContainer">
-                                <a href="add-product.php"><button type="submit">Create Product</button></a>
+                                <a href="add-product.php" class="add"><button type="submit">Create Product</button></a>
                             </div>
                             <div class="downloadButtonContainer">
                                 <a href="download-products.php"class="download" ><button type="submit">Download to Excel</button></a>

@@ -6,7 +6,7 @@
     <h3 id="logo">IMS</h3>
     <div class="sidebarUser">
         <img src="Imagenes/user/perfil.png" alt="User image" id="userImage"/>
-        <span id="userName"><?= $user['first_name'] ?></span>
+        <span id="userName" style="top: 21%; font-size: 25px; margin-left: 15px;"><?= $user['first_name'] ?></span> 
     </div>
     <div class="sidebarMenu">
         <ul class="menuLists">

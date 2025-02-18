@@ -20,10 +20,10 @@ if(isset($_POST['create_btn'])){
         header('location: ../add-product.php');
         exit();
     }
-    if($quantity == ''){
+    if($quantity == '' || $quantity < 0){
         $response = [
             'success' => false,
-            'message' => 'Quantity is required'
+            'message' => 'Valid quantity is required'
         ];
         $_SESSION['response'] = $response;
         header('location: ../add-product.php');
@@ -46,27 +46,31 @@ if(isset($_POST['create_btn'])){
         'message' => $e->getMessage()
     ]; 
     }
-
     $_SESSION['response'] = $response;
     header('location: ../add-product.php');
 } 
 
 if(isset($_POST['edit_btn'])){
+    include('connection.php');
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $table_name = $_SESSION['table'];
 
+    $id = $_POST['id'];
     $product_name = $_POST['product_name'];
     $description = $_POST['description'];
     $location = $_POST['location'];
     $supplier = $_POST['supplier'];
     $quantity = $_POST['quantity'];
     $creator = $_SESSION['user']['id'];
+    $updated_at = date('Y-m-d H:i:s');
     if($product_name == ''){
         $response = [
             'success' => false,
             'message' => 'Product name is required'
         ];
         $_SESSION['response'] = $response;
-        header('location: ../see-products.php');
+        header('location: ../edit-product.php');
         exit();
     }
     if($location == ''){
@@ -75,7 +79,7 @@ if(isset($_POST['edit_btn'])){
             'message' => 'Location is required'
         ];
         $_SESSION['response'] = $response;
-        header('location: ../see-products.php');
+        header('location: ../edit-product.php');
         exit();
     }
     if($supplier == ''){
@@ -84,10 +88,19 @@ if(isset($_POST['edit_btn'])){
             'message' => 'Supplier is required'
         ];
         $_SESSION['response'] = $response;
-        header('location: ../see-products.php');
+        header('location: ../edit-product.php');
         exit();
     }
-    if($quantity == '' || $quantity < 0){
+    if($quantity == '' ){
+        $response = [
+            'success' => false,
+            'message' => 'Quantity value is not valid'
+        ];
+        $_SESSION['response'] = $response;
+        header('location: ../edit-product.php');
+        exit();
+    }
+    if ($quantity < 0){
         $response = [
             'success' => false,
             'message' => 'Quantity value is not valid'
@@ -109,8 +122,12 @@ if(isset($_POST['edit_btn'])){
         $stmt->bindParam(':updated_at', $updated_at);
         $stmt->bindParam(':id', $id);
         $sql_execute = $stmt->execute();
-        
-    }catch(PDOException $e){
+
+        $response = [
+            'success' => true,
+            'message' => 'Product successfully updated'
+        ];
+    } catch (PDOException $e) {
         $response = [
             'success' => false,
             'message' => $e->getMessage()

@@ -58,6 +58,7 @@ include('database/connection.php');
                                 $product = $stmt->fetch(PDO::FETCH_ASSOC);
                             ?>
                                 <form action="database/product-add.php" method="POST" class="productForm">
+                                <input type="hidden" name="id" value="<?= $supplier['id']; ?>"/>
                                 <div class="productFormInputContainer">
                                     <label for="product_name">Product Name</label>
                                     <input type="text" class="productFormInput" id="product_name" name="product_name" value="<?= $product['product_name']; ?>"/>
@@ -77,6 +78,7 @@ include('database/connection.php');
                                         ?>
                                     <select name="location" class="productFormInput"> 
                                         <?php foreach($rows as $row): ?>
+                                                <option><?= $product['location']; ?></option>
                                                 <option><?php echo $row['location_name'];?></option>
                                         <?php endforeach; ?>
                                     </select>
@@ -90,7 +92,8 @@ include('database/connection.php');
                                             
                                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         ?>
-                                    <select name="supplier" class="productFormInput"> 
+                                    <select name="supplier" class="productFormInput">
+                                        <option><?= $product['supplier']; ?></option>
                                         <?php foreach($rows as $row): ?>
                                                 <option><?php echo $row['supplier_name'];?></option>
                                         <?php endforeach; ?>
@@ -98,7 +101,7 @@ include('database/connection.php');
                                 </div>
                                 <div class="productFormInputContainer">
                                     <label for="description">Product Description</label>
-                                    <textarea class="productFormInput productDescriptionTextarea" id="description" name="description"/></textarea>
+                                    <textarea class="productFormInput productDescriptionTextarea" id="description" name="description"><?= $product['description']; ?></textarea>
                                 </div>
                                 <div>
                                     <button type="submit" name="edit_btn" class="productBtn"><i class="fa fa-plus"></i> Edit Product </button>

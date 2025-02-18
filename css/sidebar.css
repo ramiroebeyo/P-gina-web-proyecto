@@ -57,9 +57,9 @@ body{
 }
 
 .sidebar{
-    width: 25%;
+    width: 20%;
     background: var(--grisOscuro);
-    height: 120vh!important;
+    height: 140vh!important;
 }
 
 .contentIcons{
@@ -82,7 +82,7 @@ body{
 }
 .sidebarUser img{
     position: relative;
-    width: 80px;
+    width: 50px;
     display: inline-block;
     border-radius: 50%;
     border: 2px solid var(--celeste);
@@ -91,31 +91,30 @@ body{
 }
 .sidebarUser span{
     position: absolute;
-    top:16%;
-    font-size: 30px;
+    top:21%;
+    font-size: 25px;
     text-transform: uppercase;
     color: white;
-    margin-left: 10px;
-    
+    margin-left: 15px;
 }
 .menuLists{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .menuLists li{
-    font-size: 35px;
+    font-size: 25px;
     text-transform: uppercase;
     color: white;
     padding: 20px 0px;
     list-style: none;
-    margin-bottom: 35px; 
+    margin-bottom: 5px; 
 }
 .menuLists li a{
     text-decoration: none;
     color: white;
-    margin-left: 110px;
+    margin-left: 20px;
 }
 .menuLists li a i{
-    font-size: 40px;
+    font-size: 20px;
 }
 .menuLists li:hover{
     background: var(--celesteHover);
