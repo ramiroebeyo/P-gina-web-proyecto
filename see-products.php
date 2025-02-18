@@ -43,20 +43,22 @@
                                 
                                 $rowsLoc = $stmtLoc->fetchAll(PDO::FETCH_ASSOC);
                             ?>
-                            <select name="supplier" class="filterSelect"> 
-                                <div class="filterOptions">
-                                    <option> Filter </option>
-                                    <?php foreach($rowsSupp as $row): ?>
-                                        <option><?php echo $row['supplier_name'];?></option>
-                                    <?php endforeach; ?>
-                                    <?php foreach($rowsLoc as $row): ?>
-                                        <option><?php echo $row['location_name'];?></option>
-                                    <?php endforeach; ?>                                            
-                                </div>
-                            </select>
-                            <a href="filter-products.php">
-                                <button type="submit" name="filter_btn" style="background: rgb(223, 223, 223); border: 1px solid rgba(108, 108, 108, 0.628); border-radius: 7px; font-size: 20px; padding: 15px;" onmousedown="this.style.background='rgb(200, 200, 200)'" onmouseup="this.style.background='rgb(223, 223, 223)'">OK</button>
-                            </a>
+                            <form action="see-products.php" method="GET" class="filterForm">
+                                <select name="supplier" class="filterSelect"> 
+                                    <div class="filterOptions">
+                                        <option> Filter </option>
+                                        <?php foreach($rowsSupp as $row): ?>
+                                            <option><?php echo $row['supplier_name'];?></option>
+                                        <?php endforeach; ?>
+                                        <?php foreach($rowsLoc as $row): ?>
+                                            <option><?php echo $row['location_name'];?></option>
+                                        <?php endforeach; ?>                                            
+                                    </div>
+                                </select>
+                                <a href="see-products.php">
+                                    <button type="submit" name="filter_btn" style="background: rgb(223, 223, 223); border: 1px solid rgba(108, 108, 108, 0.628); border-radius: 7px; font-size: 20px; padding: 15px;" onmousedown="this.style.background='rgb(200, 200, 200)'" onmouseup="this.style.background='rgb(223, 223, 223)'">OK</button>
+                                </a>
+                            </form>
                             <div class="tableContainer">
                                 <table class="seeTable">
                                     <thead>
@@ -73,13 +75,35 @@
                                             <th>Edit</th>
                                         </tr>
                                     </thead>
-                                    
                                     <?php 
-                                        $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products;";
-                                        $stmt = $conn->prepare($sql);
-                                        $stmt->execute();
-                                        
-                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        if(isset($_GET['supplier'])){                                       
+                                            $filter = trim(strtolower($_GET['supplier']));
+                                            $suppliers = array_map('strtolower', array_map('trim', array_column($rowsSupp, 'supplier_name')));
+                                            
+                                            foreach ($suppliers as $supplier): 
+                                                if($filter == $supplier){
+                                                    $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE supplier = :supplier;";
+                                                    $stmt = $conn->prepare($sql);
+                                                    $stmt->bindParam(':supplier', $filter);
+                                                    $stmt->execute();
+
+                                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                }else{
+                                                    $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE location = :supplier;";
+                                                    $stmt = $conn->prepare($sql);
+                                                    $stmt->bindParam(':supplier', $filter);
+                                                    $stmt->execute();
+
+                                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                }
+                                            endforeach;
+                                        } else{
+                                            $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products;";
+                                            $stmt = $conn->prepare($sql);
+                                            $stmt->execute();
+
+                                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        }    
                                     ?>
                                     <tbody>
                                         <?php foreach($rows as $row): ?>
