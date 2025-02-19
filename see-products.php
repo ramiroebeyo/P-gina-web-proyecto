@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['user'])) header('location: index.php');
     $user = $_SESSION['user']; 
-    $_SESSION['table'] = 'users';
+    $_SESSION['table'] = 'products';
     
     if(strlen($user['first_name']) > 12){
         $user['first_name'] = substr($user['first_name'], 0, 10);

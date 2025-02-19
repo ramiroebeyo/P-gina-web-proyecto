@@ -1,5 +1,5 @@
 //sidebar open/close
-    var Navicon = document.getElementById('Navicon');
+var Navicon = document.getElementById('Navicon');
 var sidebar = document.getElementById('sidebar');
 var contentIcons = document.getElementById('contentIcons');
 var logo = document.getElementById('logo');
@@ -40,7 +40,16 @@ var menuWords;
                 menuWords[i].style.display = 'none';
             }     
         } else {
-            menuIcons.style.marginLeft = '110px';
+            sidebarOpen = true;
+            sidebar.style.width = '20%';
+            sidebar.style.height = '120vh';
+            sidebar.style.transition = '0.16s all';
+            contentIcons.style.width = '75%';
+            logo.style.fontSize = '80px';
+            logo.style.marginLeft = '0px';
+            userImage.style.width = '80px';
+            userImage.style.marginLeft = '0px';
+            sidebar.style.transition = '0.16s all';
             menuIcons1.style.marginLeft = '110px';
             menuIcons1.style.paddingBottom = '100px';
             menuIcons2.style.marginLeft = '110px';

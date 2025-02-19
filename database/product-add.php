@@ -52,8 +52,6 @@ if(isset($_POST['create_btn'])){
 
 if(isset($_POST['edit_btn'])){
     include('connection.php');
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $table_name = $_SESSION['table'];
 
     $id = $_POST['id'];
@@ -91,16 +89,7 @@ if(isset($_POST['edit_btn'])){
         header('location: ../edit-product.php');
         exit();
     }
-    if($quantity == '' ){
-        $response = [
-            'success' => false,
-            'message' => 'Quantity value is not valid'
-        ];
-        $_SESSION['response'] = $response;
-        header('location: ../edit-product.php');
-        exit();
-    }
-    if ($quantity < 0){
+    if($quantity == '' || $quantity < 0){
         $response = [
             'success' => false,
             'message' => 'Quantity value is not valid'
@@ -110,7 +99,7 @@ if(isset($_POST['edit_btn'])){
         exit();
     }
 
-    try{
+    try{ 
         $sql = "UPDATE products SET product_name = :product_name, description = :description, location = :location, supplier = :supplier, quantity = :quantity, created_by =:creator, updated_at = :updated_at WHERE id = :id LIMIT 1;";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':product_name', $product_name);

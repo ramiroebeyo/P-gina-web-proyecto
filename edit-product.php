@@ -58,7 +58,7 @@ include('database/connection.php');
                                 $product = $stmt->fetch(PDO::FETCH_ASSOC);
                             ?>
                             <form action="database/product-add.php" method="POST" class="productForm">
-                                <input type="hidden" name="id" value="<?= $supplier['id']; ?>"/>
+                                <input type="hidden" name="id" value="<?= $product['id']; ?>"/>
                                 <div class="productFormInputContainer">
                                     <label for="product_name">Product Name</label>
                                     <input type="text" class="productFormInput" id="product_name" name="product_name" value="<?= $product['product_name']; ?>"/>
