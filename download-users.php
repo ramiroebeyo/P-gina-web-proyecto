@@ -1,6 +1,6 @@
 <?php
     include('database/connection.php');
-    $table = 'suppliers';
+    $table = 'users';
 
         // Consultar datos de la tabla
         $stmt = $conn->query("SELECT * FROM $table");
@@ -12,7 +12,7 @@
     
         // Encabezados para descargar como archivo Excel
         header("Content-Type: application/vnd.ms-excel");
-        header("Content-Disposition: attachment; filename=\"suppliers.xls\"");
+        header("Content-Disposition: attachment; filename=\"users.xls\"");
     
         // Estilos para la tabla
         $styles = "
