@@ -20,7 +20,7 @@
                 <a href="see-suppliers.php"><i class="fa fa-truck"></i> <span class="menuWords">suppliers</span></a>
             </li>
             <li class="<?= ($current_page == 'add-order.php') ? 'menuActive' : '' ?>">
-                <a href="add-order.php"><i class="fa fa-shopping-cart"></i> <span class="menuWords">orders</span></a>
+                <a href="see-orders.php"><i class="fa fa-shopping-cart"></i> <span class="menuWords">orders</span></a>
             </li>
             <li class="<?= ($current_page == 'see-users.php') ? 'menuActive' : '' ?>">
                 <a id="menuIcons1" href="see-users.php"><i class="fa fa-user-plus"></i> <span class="menuWords">users</span></a>
