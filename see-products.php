@@ -52,7 +52,8 @@
                                         <?php endforeach; ?>
                                         <?php foreach($rowsLoc as $row): ?>
                                             <option><?php echo $row['location_name'];?></option>
-                                        <?php endforeach; ?>                                            
+                                        <?php endforeach; ?>
+                                        <option> All </option>                                            
                                     </div>
                                 </select>
                                 <a href="see-products.php">
@@ -80,23 +81,23 @@
                                             $filter = trim(strtolower($_GET['supplier']));
                                             $suppliers = array_map('strtolower', array_map('trim', array_column($rowsSupp, 'supplier_name')));
                                             
-                                            foreach ($suppliers as $supplier): 
-                                                if($filter == $supplier){
-                                                    $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE supplier = :supplier;";
-                                                    $stmt = $conn->prepare($sql);
-                                                    $stmt->bindParam(':supplier', $filter);
-                                                    $stmt->execute();
+                                            if (in_array($filter, $suppliers)) {
+                                                $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE supplier = :filter;";
+                                                $stmt = $conn->prepare($sql);
+                                                $stmt->bindParam(':filter', $filter);
+                                                $stmt->execute();
+                                            } else if($filter == 'all' || $filter == 'filter'){
+                                                $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products;";
+                                                $stmt = $conn->prepare($sql);
+                                                $stmt->execute();
+                                            } else {
+                                                $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE location = :filter;";
+                                                $stmt = $conn->prepare($sql);
+                                                $stmt->bindParam(':filter', $filter);
+                                                $stmt->execute();
+                                            }
 
-                                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                                }else{
-                                                    $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products WHERE location = :supplier;";
-                                                    $stmt = $conn->prepare($sql);
-                                                    $stmt->bindParam(':supplier', $filter);
-                                                    $stmt->execute();
-
-                                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                                }
-                                            endforeach;
+                                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         } else{
                                             $sql = "SELECT id, product_name, description, location, supplier, quantity, created_by, created_at, updated_at FROM products;";
                                             $stmt = $conn->prepare($sql);
