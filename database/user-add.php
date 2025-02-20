@@ -39,6 +39,7 @@ if(isset($_POST['create_btn'])){
 }
 
 if(isset($_POST['edit_btn'])){
+    include('connection.php');
     $table_name = $_SESSION['table'];
 
     $id = $_POST['id'];
@@ -51,10 +52,30 @@ if(isset($_POST['edit_btn'])){
     if($first_name == ''){
         $response = [
             'success' => false,
-            'message' => 'Supplier name is required'
+            'message' => 'Name is required'
         ];
         $_SESSION['response'] = $response;
-        header('location: ../edit-supplier.php');
+        header('location: ../edit-user.php');
+        exit();
+    }
+    
+    if($last_name == ''){
+        $response = [
+            'success' => false,
+            'message' => 'Last name is required'
+        ];
+        $_SESSION['response'] = $response;
+        header('location: ../edit-user.php');
+        exit();
+    }
+
+    if($username == ''){
+        $response = [
+            'success' => false,
+            'message' => 'username is required'
+        ];
+        $_SESSION['response'] = $response;
+        header('location: ../edit-user.php');
         exit();
     }
 
@@ -64,23 +85,20 @@ if(isset($_POST['edit_btn'])){
             'message' => 'Email is required'
         ];
         $_SESSION['response'] = $response;
-        header('location: ../edit-supplier.php');
+        header('location: ../edit-user.php');
         exit();
     }
 
     try{
-        $sql = "UPDATE suppliers SET supplier_name = :supplier_name, supplier_cuit = :supplier_cuit, supplier_location = :supplier_location, supplier_description = :supplier_description, supplier_email = :supplier_email, created_by =:creator, updated_at = :updated_at WHERE id = :id LIMIT 1;";
+        $sql = "UPDATE users SET first_name = :first_name, last_name = :last_name, username = :username, email = :email, updated_at = :updated_at WHERE id = :id LIMIT 1;";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':supplier_name', $supplier_name);
-        $stmt->bindParam(':supplier_cuit', $supplier_cuit);
-        $stmt->bindParam(':supplier_location', $location);
-        $stmt->bindParam(':supplier_description', $description);
-        $stmt->bindParam(':supplier_email', $email);
-        $stmt->bindParam(':creator', $creator);
+        $stmt->bindParam(':first_name', $first_name);
+        $stmt->bindParam(':last_name', $last_name);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
         $stmt->bindParam(':updated_at', $updated_at);
         $stmt->bindParam(':id', $id);
         $sql_execute = $stmt->execute();
-        
     }catch(PDOException $e){
         $response = [
             'success' => false,
@@ -88,8 +106,6 @@ if(isset($_POST['edit_btn'])){
         ];
     }
 }
-
-
     $_SESSION['response'] = $response;
     header('location: ../see-users.php');
 ?>

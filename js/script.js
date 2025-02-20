@@ -25,7 +25,9 @@ var menuWords;
             contentIcons.style.width = '96%';
             logo.style.fontSize = '30px';
             logo.style.marginLeft = '-10px';
-            userName.style.display = 'none';    
+            userName.style.display = 'none';
+            userImage.style.display = 'block';
+            userImage.style.margin = '0 auto';
 
             menuWords = document.getElementsByClassName('menuWords');
             for(var i = 0; i < menuWords.length; i++){
@@ -40,6 +42,10 @@ var menuWords;
             logo.style.marginLeft = '0px';
             sidebar.style.transition = '0.16s all';
             sidebarOpen = true;
+            userName.style.display = 'inline-block';
+            userImage.style.display = 'inline-block';
+            userImage.style.marginLeft = '-140px';
+            
 
             menuWords = document.getElementsByClassName('menuWords');
             for(var i = 0; i < menuWords.length; i++){
