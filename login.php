@@ -59,8 +59,16 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body id="loginBody">
-    <div class="homepageHeader">
-        <a href="/pagina-web-proyecto/add-new-user.php">Create Account</a>
+    <div class="homepagHeader">
+        <a href="/pagina-web-proyecto/add-new-user.php" style="color: white; text-decoration: none; padding: 5px; font-size: 20px;">
+            Create Account
+        </a>
+        <style>
+            a:hover {
+                border: 2px solid transparent; padding: 5px; transition: 0.3s;
+                border-color: white;
+            }
+        </style>
     </div>
     <?php
         if(!empty($error_message)) { ?>
