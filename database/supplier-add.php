@@ -67,7 +67,7 @@
         }
     }
 
-    if(isset($_POST['create_btn'])){
+if(isset($_POST['create_btn'])){
     $table_name = $_SESSION['table'];
 
     $supplier_name = $_POST['supplier_name'];

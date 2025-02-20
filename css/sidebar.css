@@ -59,7 +59,7 @@ body{
 .sidebar{
     width: 20%;
     background: var(--grisOscuro);
-    height: 150%!important;
+    height: 160vh!important;
 }
 
 .contentIcons{

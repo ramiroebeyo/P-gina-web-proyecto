@@ -62,6 +62,23 @@ body#loginBody{
     background-size: cover;
 }
 
+.homepageHeader{
+    font-size: 20px;
+    padding: 25px;
+    text-align: right;
+}
+
+.homepageHeader a{
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.homepageHeader a:hover{
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: 0.08s;
+}
+
 .loginHeader{
     text-align: center;
     margin-bottom: 70px;

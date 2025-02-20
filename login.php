@@ -59,6 +59,9 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body id="loginBody">
+    <div class="homepageHeader">
+        <a href="/pagina-web-proyecto/add-new-user.php">Create Account</a>
+    </div>
     <?php
         if(!empty($error_message)) { ?>
     <div id="errorMessage">

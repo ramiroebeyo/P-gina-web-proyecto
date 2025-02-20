@@ -1,15 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['user'])) header('location: index.php');
-$user = $_SESSION['user']; 
-$_SESSION['table'] = 'users';
-
-if(strlen($user['first_name']) > 12){
-    $user['first_name'] = substr($user['first_name'], 0, 10);
-    $user['first_name'] .= "...";
-} 
-?>
-
 <!DOCTYPE html>
 <html lang='en'>    
 <head>
@@ -35,9 +23,6 @@ if(strlen($user['first_name']) > 12){
     </script>
 
     <div id="dashboardContainer">
-        <?php include('partials/sidebar.php');?>
-        <div class="contentIcons" id="contentIcons">
-            <?php include('partials/topNav.php'); ?>
                 <div class="content">
                     <div class="contentMain">
                         <div id="userFormContainer">
@@ -63,7 +48,7 @@ if(strlen($user['first_name']) > 12){
                                     <input type="password" class="userFormInput" id="password" name="password"/>
                                 </div>
                                 <div>
-                                    <button type="submit" name="create_btn" class="userBtn"><i class="fa fa-plus"></i> Add User </button>
+                                    <button type="submit" name="create_btn" class="userBtn"><i class="fa fa-plus"></i> Create Account </button>
                                 </div>
                             </form>
                             <?php if(isset($_SESSION['response'])){ 
